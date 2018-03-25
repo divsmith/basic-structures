@@ -12,7 +12,7 @@ public class StringStack {
 
     public void push(String item)
     {
-        Node oldfirst = this.first;
+        Node oldfirst = first;
         first = new Node();
         first.item = item;
         first.next = oldfirst;
