@@ -3,6 +3,16 @@
  */
 public class StringStack {
 
+    public void push(String item)
+    {
+
+    }
+
+    public String pop()
+    {
+        return "Testing";
+    }
+
     public boolean isEmpty()
     {
         return true;

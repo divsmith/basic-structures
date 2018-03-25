@@ -14,4 +14,12 @@ class StringStackTest {
         StringStack ss = new StringStack();
         Assertions.assertTrue(ss.isEmpty());
     }
+
+    @Test
+    void push_pop()
+    {
+        StringStack ss = new StringStack();
+        ss.push("Testing");
+        Assertions.assertEquals("Testing", ss.pop());
+    }
 }
