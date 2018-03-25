@@ -22,4 +22,14 @@ class StringStackTest {
         ss.push("Testing");
         Assertions.assertEquals("Testing", ss.pop());
     }
+
+    @Test
+    void fifo()
+    {
+        StringStack ss = new StringStack();
+        ss.push("first");
+        ss.push("second");
+        Assertions.assertEquals("second", ss.pop());
+        Assertions.assertEquals("first", ss.pop());
+    }
 }
