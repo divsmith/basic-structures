@@ -27,6 +27,6 @@ public class StringStack {
 
     public boolean isEmpty()
     {
-        return true;
+        return first == null;
     }
 }

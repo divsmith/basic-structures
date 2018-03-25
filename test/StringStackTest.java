@@ -32,4 +32,21 @@ class StringStackTest {
         Assertions.assertEquals("second", ss.pop());
         Assertions.assertEquals("first", ss.pop());
     }
+
+    @Test
+    void not_empty()
+    {
+        StringStack ss = new StringStack();
+        ss.push("test");
+        Assertions.assertFalse(ss.isEmpty());
+    }
+
+    @Test
+    void empty_after_push_pop()
+    {
+        StringStack ss = new StringStack();
+        ss.push("test");
+        ss.pop();
+        Assertions.assertTrue(ss.isEmpty());
+    }
 }
