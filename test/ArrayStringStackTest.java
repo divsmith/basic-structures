@@ -30,21 +30,21 @@ class ArrayStringStackTest {
         Assertions.assertEquals("second", ss.pop());
         Assertions.assertEquals("first", ss.pop());
     }
-//
-//    @Test
-//    void not_empty()
-//    {
-//        ArrayStringStack ss = new ArrayStringStack();
-//        ss.push("test");
-//        Assertions.assertFalse(ss.isEmpty());
-//    }
-//
-//    @Test
-//    void empty_after_push_pop()
-//    {
-//        ArrayStringStack ss = new ArrayStringStack();
-//        ss.push("test");
-//        ss.pop();
-//        Assertions.assertTrue(ss.isEmpty());
-//    }
+
+    @Test
+    void not_empty()
+    {
+        ArrayStringStack ss = new ArrayStringStack();
+        ss.push("test");
+        Assertions.assertFalse(ss.isEmpty());
+    }
+
+    @Test
+    void empty_after_push_pop()
+    {
+        ArrayStringStack ss = new ArrayStringStack();
+        ss.push("test");
+        ss.pop();
+        Assertions.assertTrue(ss.isEmpty());
+    }
 }
