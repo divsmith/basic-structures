@@ -13,13 +13,13 @@ class ArrayStringStackTest {
         Assertions.assertTrue(ss.isEmpty());
     }
 
-//    @Test
-//    void push_pop()
-//    {
-//        ArrayStringStack ss = new ArrayStringStack();
-//        ss.push("Testing");
-//        Assertions.assertEquals("Testing", ss.pop());
-//    }
+    @Test
+    void push_pop()
+    {
+        ArrayStringStack ss = new ArrayStringStack();
+        ss.push("Testing");
+        Assertions.assertEquals("Testing", ss.pop());
+    }
 //
 //    @Test
 //    void fifo()
