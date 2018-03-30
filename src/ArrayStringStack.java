@@ -8,10 +8,18 @@ public class ArrayStringStack {
 
     public void push(String item)
     {
-        if (n == 0)
+        if (n == s.length)
         {
-            s[0] = item;
+            String[] larger = new String[s.length * 2];
+            for (int i = 0; i < n; i++)
+            {
+                larger[i] = s[i];
+            }
+
+            s = larger;
         }
+
+        s[n] = item;
 
         n++;
     }

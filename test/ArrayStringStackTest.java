@@ -20,16 +20,16 @@ class ArrayStringStackTest {
         ss.push("Testing");
         Assertions.assertEquals("Testing", ss.pop());
     }
-//
-//    @Test
-//    void fifo()
-//    {
-//        ArrayStringStack ss = new ArrayStringStack();
-//        ss.push("first");
-//        ss.push("second");
-//        Assertions.assertEquals("second", ss.pop());
-//        Assertions.assertEquals("first", ss.pop());
-//    }
+
+    @Test
+    void fifo()
+    {
+        ArrayStringStack ss = new ArrayStringStack();
+        ss.push("first");
+        ss.push("second");
+        Assertions.assertEquals("second", ss.pop());
+        Assertions.assertEquals("first", ss.pop());
+    }
 //
 //    @Test
 //    void not_empty()
