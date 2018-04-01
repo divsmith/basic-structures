@@ -29,6 +29,17 @@ public class ArrayStringStack {
         String item = s[n - 1];
         s[n - 1] = null;
         n--;
+
+        if (n < s.length / 4)
+        {
+            String[] smaller = new String[s.length / 2];
+            for (int i = 0; i < n; i++)
+            {
+                smaller[i] = s[i];
+            }
+
+            s = smaller;
+        }
         return item;
     }
 

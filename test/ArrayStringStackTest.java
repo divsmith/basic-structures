@@ -47,4 +47,30 @@ class ArrayStringStackTest {
         ss.pop();
         Assertions.assertTrue(ss.isEmpty());
     }
+
+    @Test
+    void test_resizing_larger_and_smaller()
+    {
+        ArrayStringStack as = new ArrayStringStack();
+        as.push("one");
+        as.push("two");
+        as.push("three");
+        as.push("four");
+        as.push("five");
+        as.push("six");
+        as.push("seven");
+        as.push("eight");
+
+        as.pop();
+        as.pop();
+        as.pop();
+        as.pop();
+        as.pop();
+        as.pop();
+
+        as.push("test1");
+
+        Assertions.assertEquals("test1", as.pop());
+        Assertions.assertEquals("two", as.pop());
+    }
 }
