@@ -35,7 +35,7 @@ public class ArrayStringStack {
         s[n - 1] = null;
         n--;
 
-        if (n < s.length / 4)
+        if (n == s.length / 4)
         {
             resize(s.length / 2);
         }
