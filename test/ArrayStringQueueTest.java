@@ -26,4 +26,17 @@ public class ArrayStringQueueTest {
         sq.enqueue("test");
         Assertions.assertFalse(sq.isEmpty());
     }
+
+    @Test
+    void enqueue_dequeue()
+    {
+        sq.enqueue("test");
+        sq.enqueue("test2");
+        sq.enqueue("test3");
+        sq.enqueue("test4");
+        Assertions.assertEquals("test", sq.dequeue());
+        Assertions.assertEquals("test2", sq.dequeue());
+        Assertions.assertEquals("test3", sq.dequeue());
+        Assertions.assertEquals("test4", sq.dequeue());
+    }
 }
