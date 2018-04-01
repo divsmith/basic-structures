@@ -80,5 +80,13 @@ public class ArrayStringQueueTest {
         sq.enqueue("test9");
 
         Assertions.assertEquals("test3", sq.dequeue());
+
+        sq.dequeue();
+        sq.dequeue();
+        sq.dequeue();
+        sq.dequeue();
+        sq.dequeue();
+
+        Assertions.assertEquals("test9", sq.dequeue());
     }
 }
