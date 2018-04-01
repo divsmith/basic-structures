@@ -6,17 +6,22 @@ public class ArrayStringStack {
     private String[] s = new String[1];
     private int n = 0;
 
+    private void resize(int capacity)
+    {
+        String[] copy = new String[capacity];
+        for (int i = 0; i < n; i++)
+        {
+            copy[i] = s[i];
+        }
+
+        s = copy;
+    }
+
     public void push(String item)
     {
         if (n == s.length)
         {
-            String[] larger = new String[s.length * 2];
-            for (int i = 0; i < n; i++)
-            {
-                larger[i] = s[i];
-            }
-
-            s = larger;
+            resize(s.length * 2);
         }
 
         s[n] = item;
@@ -32,13 +37,7 @@ public class ArrayStringStack {
 
         if (n < s.length / 4)
         {
-            String[] smaller = new String[s.length / 2];
-            for (int i = 0; i < n; i++)
-            {
-                smaller[i] = s[i];
-            }
-
-            s = smaller;
+            resize(s.length / 2);
         }
         return item;
     }
