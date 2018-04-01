@@ -16,6 +16,12 @@ public class LinkedListStringQueue {
     {
         String item = first.item;
         first = first.next;
+
+        if (isEmpty())
+        {
+            last = null;
+        }
+
         return item;
     }
 
@@ -25,7 +31,7 @@ public class LinkedListStringQueue {
         node.item = item;
         node.next = null;
 
-        if (first == null)
+        if (isEmpty())
         {
             first = node;
         }
