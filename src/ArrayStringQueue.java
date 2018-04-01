@@ -21,10 +21,10 @@ public class ArrayStringQueue {
         else if (tail == s.length)
         {
             // If the total number of array indicies being
-            // used is less than one fourth of the total available,
-            // rezero the array and resize it to one half the length.
+            // used is less than one half of the total available,
+            // rezero the array and keep it the same size.
             // Otherwise, rezero it and resize it to twice the length.
-            resize((tail - head) + 1 < (s.length / 4) ? s.length / 2 : s.length * 2);
+            resize((tail - head) + 1 <= (s.length / 2) ? s.length : s.length * 2);
         }
 
         s[tail] = item;
@@ -36,6 +36,16 @@ public class ArrayStringQueue {
         String item = s[head];
         s[head] = null;
         head++;
+
+        // If the total number of array indicies being
+        // used is less than one fourth the total available,
+        // rezero the array and resize it to one half the
+        // current size.
+        if ((tail - head) <= (s.length / 4))
+        {
+            resize(s.length / 2);
+        }
+
         return item;
     }
 
@@ -49,6 +59,9 @@ public class ArrayStringQueue {
         }
 
         s = resized;
+
+        tail -= head;
+        head = 0;
     }
 
 
