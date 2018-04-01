@@ -20,4 +20,10 @@ public class ArrayStringQueueTest {
         Assertions.assertTrue(sq.isEmpty());
     }
 
+    @Test
+    void not_empty()
+    {
+        sq.enqueue("test");
+        Assertions.assertFalse(sq.isEmpty());
+    }
 }
