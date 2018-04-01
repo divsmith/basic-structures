@@ -17,8 +17,6 @@ public class ArrayStringQueue {
         if (tail == 0)
         {
             s = new String[1];
-            s[0] = item;
-            tail++;
         }
         else if (tail == s.length)
         {
@@ -28,6 +26,17 @@ public class ArrayStringQueue {
             // Otherwise, rezero it and resize it to twice the length.
             resize((tail - head) + 1 < (s.length / 4) ? s.length / 2 : s.length * 2);
         }
+
+        s[tail] = item;
+        tail++;
+    }
+
+    public String dequeue()
+    {
+        String item = s[head];
+        s[head] = null;
+        head++;
+        return item;
     }
 
     private void resize(int capacity)
