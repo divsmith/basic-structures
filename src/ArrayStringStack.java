@@ -1,7 +1,7 @@
 /**
  * Created by parker on 3/30/18.
  */
-public class ArrayStringStack {
+public class ArrayStringStack implements StringStackInterface{
 
     private String[] s = new String[1];
     private int n = 0;
@@ -42,7 +42,7 @@ public class ArrayStringStack {
         return item;
     }
 
-    public Boolean isEmpty()
+    public boolean isEmpty()
     {
         return n == 0;
     }

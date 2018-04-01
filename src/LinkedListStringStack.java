@@ -1,7 +1,7 @@
 /**
  * Created by parker on 3/25/18.
  */
-public class LinkedListStringStack {
+public class LinkedListStringStack implements StringStackInterface{
 
     private Node first = null;
 
