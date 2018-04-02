@@ -89,4 +89,26 @@ public class ArrayStringQueueTest {
 
         Assertions.assertEquals("test9", sq.dequeue());
     }
+
+    @Test
+    void enqueue_dequeue_enqueue_wrap_around()
+    {
+        sq.enqueue("one");
+        sq.enqueue("two");
+        sq.enqueue("three");
+        sq.enqueue("four");
+
+        sq.dequeue();
+        sq.dequeue();
+
+        sq.enqueue("five");
+        sq.enqueue("six");
+        sq.enqueue("seven");
+
+        Assertions.assertEquals("three", sq.dequeue());
+        Assertions.assertEquals("four", sq.dequeue());
+        Assertions.assertEquals("five", sq.dequeue());
+        Assertions.assertEquals("six", sq.dequeue());
+        Assertions.assertEquals("seven", sq.dequeue());
+    }
 }
