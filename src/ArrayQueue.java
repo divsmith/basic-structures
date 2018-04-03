@@ -1,22 +1,22 @@
 /**
  * Created by parker on 4/1/18.
  */
-public class ArrayStringQueue {
+public class ArrayQueue<Item> {
 
     private int head = 0;
     private int tail = 0;
-    private String[] s;
+    private Item[] s;
 
     public boolean isEmpty()
     {
         return tail == head;
     }
 
-    public void enqueue(String item)
+    public void enqueue(Item item)
     {
         if (tail == 0)
         {
-            s = new String[1];
+            s = (Item[]) new Object[1];
         }
         else if (tail == s.length)
         {
@@ -31,9 +31,9 @@ public class ArrayStringQueue {
         tail++;
     }
 
-    public String dequeue()
+    public Item dequeue()
     {
-        String item = s[head];
+        Item item = s[head];
         s[head] = null;
         head++;
 
@@ -51,7 +51,7 @@ public class ArrayStringQueue {
 
     private void resize(int capacity)
     {
-        String[] resized = new String[capacity];
+        Item[] resized = (Item[]) new Object[capacity];
 
         for (int i = head; i < tail; i++)
         {

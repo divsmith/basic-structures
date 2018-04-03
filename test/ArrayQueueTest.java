@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 /**
  * Created by parker on 4/1/18.
  */
-public class ArrayStringQueueTest {
-    private ArrayStringQueue sq;
+public class ArrayQueueTest {
+    private ArrayQueue<String> sq;
 
     @BeforeEach
     void initEach()
     {
-        sq = new ArrayStringQueue();
+        sq = new ArrayQueue<>();
     }
 
     @Test
