@@ -1,7 +1,7 @@
 /**
  * Created by parker on 3/30/18.
  */
-public class ArrayStack<Item>{
+public class ArrayStack<Item> implements StackInterface<Item>{
 
     private Item[] s = (Item[]) new Object[1];
     private int n = 0;

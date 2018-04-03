@@ -1,7 +1,7 @@
 /**
  * Created by parker on 3/25/18.
  */
-public class ListStack<Item>{
+public class ListStack<Item> implements StackInterface<Item>{
 
     private Node first = null;
 
