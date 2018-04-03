@@ -3,7 +3,7 @@ import java.util.Iterator;
 /**
  * Created by parker on 3/25/18.
  */
-public class StackList<Item> implements StackInterface<Item>{
+public class StackList<Item> implements StackInterface<Item>, Iterable<Item>{
 
     private Node first = null;
 
