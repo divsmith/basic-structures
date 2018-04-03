@@ -1,14 +1,14 @@
 /**
  * Created by parker on 3/30/18.
  */
-public class ArrayStringStack implements StringStackInterface{
+public class ArrayStack<Item>{
 
-    private String[] s = new String[1];
+    private Item[] s = (Item[]) new Object[1];
     private int n = 0;
 
     private void resize(int capacity)
     {
-        String[] copy = new String[capacity];
+        Item[] copy = (Item[]) new Object[capacity];
         for (int i = 0; i < n; i++)
         {
             copy[i] = s[i];
@@ -17,7 +17,7 @@ public class ArrayStringStack implements StringStackInterface{
         s = copy;
     }
 
-    public void push(String item)
+    public void push(Item item)
     {
         if (n == s.length)
         {
@@ -29,9 +29,9 @@ public class ArrayStringStack implements StringStackInterface{
         n++;
     }
 
-    public String pop()
+    public Item pop()
     {
-        String item = s[n - 1];
+        Item item = s[n - 1];
         s[n - 1] = null;
         n--;
 
