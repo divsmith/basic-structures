@@ -1,7 +1,7 @@
 /**
  * Created by parker on 4/1/18.
  */
-public class ArrayQueue<Item> implements QueueInterface<Item>{
+public class QueueArray<Item> implements QueueInterface<Item>{
 
     private int head = 0;
     private int tail = 0;

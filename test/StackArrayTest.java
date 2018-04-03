@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Test;
 /**
  * Created by parker on 3/25/18.
  */
-class ArrayStackTest {
+class StackArrayTest {
 
     @Test
     void is_empty()
     {
-        ArrayStack<String> ss = new ArrayStack<>();
+        StackArray<String> ss = new StackArray<>();
         Assertions.assertTrue(ss.isEmpty());
     }
 
     @Test
     void push_pop()
     {
-        ArrayStack<String> ss = new ArrayStack<>();
+        StackArray<String> ss = new StackArray<>();
         ss.push("Testing");
         Assertions.assertEquals("Testing", ss.pop());
     }
@@ -24,7 +24,7 @@ class ArrayStackTest {
     @Test
     void fifo()
     {
-        ArrayStack<String> ss = new ArrayStack<>();
+        StackArray<String> ss = new StackArray<>();
         ss.push("first");
         ss.push("second");
         Assertions.assertEquals("second", ss.pop());
@@ -34,7 +34,7 @@ class ArrayStackTest {
     @Test
     void not_empty()
     {
-        ArrayStack<String> ss = new ArrayStack<>();
+        StackArray<String> ss = new StackArray<>();
         ss.push("test");
         Assertions.assertFalse(ss.isEmpty());
     }
@@ -42,7 +42,7 @@ class ArrayStackTest {
     @Test
     void empty_after_push_pop()
     {
-        ArrayStack<String> ss = new ArrayStack<>();
+        StackArray<String> ss = new StackArray<>();
         ss.push("test");
         ss.pop();
         Assertions.assertTrue(ss.isEmpty());
@@ -51,7 +51,7 @@ class ArrayStackTest {
     @Test
     void test_resizing_larger_and_smaller()
     {
-        ArrayStack<String> as = new ArrayStack<>();
+        StackArray<String> as = new StackArray<>();
         as.push("one");
         as.push("two");
         as.push("three");

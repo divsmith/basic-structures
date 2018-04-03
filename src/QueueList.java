@@ -1,7 +1,7 @@
 /**
  * Created by parker on 3/31/18.
  */
-public class ListQueue<Item> implements QueueInterface<Item>{
+public class QueueList<Item> implements QueueInterface<Item>{
 
     private Node last = null;
     private Node first = null;
