@@ -60,6 +60,12 @@ public class ArrayStringQueueTest {
         Assertions.assertEquals("test6", sq.dequeue());
         Assertions.assertEquals("test7", sq.dequeue());
         Assertions.assertEquals("test8", sq.dequeue());
+
+        sq.enqueue("test9");
+        sq.enqueue("test10");
+
+        Assertions.assertEquals("test9", sq.dequeue());
+        Assertions.assertEquals("test10", sq.dequeue());
     }
 
     @Test
