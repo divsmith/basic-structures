@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Test;
 /**
  * Created by parker on 3/25/18.
  */
-class LinkedListStringStackTest {
+class ListStackTest {
 
     @Test
     void is_empty()
     {
-        LinkedListStringStack ss = new LinkedListStringStack();
+        ListStack<String> ss = new ListStack<>();
         Assertions.assertTrue(ss.isEmpty());
     }
 
     @Test
     void push_pop()
     {
-        LinkedListStringStack ss = new LinkedListStringStack();
+        ListStack<String> ss = new ListStack<>();
         ss.push("Testing");
         Assertions.assertEquals("Testing", ss.pop());
     }
@@ -24,7 +24,7 @@ class LinkedListStringStackTest {
     @Test
     void fifo()
     {
-        LinkedListStringStack ss = new LinkedListStringStack();
+        ListStack<String> ss = new ListStack<>();
         ss.push("first");
         ss.push("second");
         Assertions.assertEquals("second", ss.pop());
@@ -34,7 +34,7 @@ class LinkedListStringStackTest {
     @Test
     void not_empty()
     {
-        LinkedListStringStack ss = new LinkedListStringStack();
+        ListStack<String> ss = new ListStack<>();
         ss.push("test");
         Assertions.assertFalse(ss.isEmpty());
     }
@@ -42,7 +42,7 @@ class LinkedListStringStackTest {
     @Test
     void empty_after_push_pop()
     {
-        LinkedListStringStack ss = new LinkedListStringStack();
+        ListStack<String> ss = new ListStack<>();
         ss.push("test");
         ss.pop();
         Assertions.assertTrue(ss.isEmpty());

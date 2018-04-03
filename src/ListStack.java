@@ -1,16 +1,16 @@
 /**
  * Created by parker on 3/25/18.
  */
-public class LinkedListStringStack implements StringStackInterface{
+public class ListStack<Item>{
 
     private Node first = null;
 
     private class Node {
-        String item;
+        Item item;
         Node next;
     }
 
-    public void push(String item)
+    public void push(Item item)
     {
         Node oldfirst = first;
         first = new Node();
@@ -18,9 +18,9 @@ public class LinkedListStringStack implements StringStackInterface{
         first.next = oldfirst;
     }
 
-    public String pop()
+    public Item pop()
     {
-        String item = first.item;
+        Item item = first.item;
         first = first.next;
         return item;
     }
