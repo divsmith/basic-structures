@@ -1,20 +1,20 @@
 /**
  * Created by parker on 3/31/18.
  */
-public class LinkedListStringQueue {
+public class ListQueue<Item> {
 
     private Node last = null;
     private Node first = null;
 
     private class Node
     {
-        String item;
+        Item item;
         Node next;
     }
 
-    public String dequeue()
+    public Item dequeue()
     {
-        String item = first.item;
+        Item item = first.item;
         first = first.next;
 
         if (isEmpty())
@@ -25,7 +25,7 @@ public class LinkedListStringQueue {
         return item;
     }
 
-    public void enqueue(String item)
+    public void enqueue(Item item)
     {
         Node node = new Node();
         node.item = item;
