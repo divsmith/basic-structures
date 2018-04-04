@@ -1,7 +1,9 @@
+import java.util.Iterator;
+
 /**
  * Created by parker on 3/30/18.
  */
-public class StackArray<Item> implements StackInterface<Item>{
+public class StackArray<Item> implements StackInterface<Item>, Iterable<Item>{
 
     private Item[] s = (Item[]) new Object[1];
     private int n = 0;
@@ -45,5 +47,27 @@ public class StackArray<Item> implements StackInterface<Item>{
     public boolean isEmpty()
     {
         return n == 0;
+    }
+
+    public Iterator<Item> iterator()
+    {
+        return new ArrayIterator();
+    }
+
+    private class ArrayIterator implements Iterator<Item>
+    {
+        private int index = 0;
+
+        public boolean hasNext()
+        {
+            return index == n;
+        }
+
+        public Item next()
+        {
+            Item item = s[index];
+            index++;
+            return item;
+        }
     }
 }
