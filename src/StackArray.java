@@ -62,6 +62,7 @@ public class StackArray<Item> implements StackInterface<Item>, Iterable<Item>{
         {
             return index != n;
         }
+        public void remove() { /* not supported */ }
 
         public Item next()
         {
