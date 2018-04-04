@@ -60,7 +60,7 @@ public class StackArray<Item> implements StackInterface<Item>, Iterable<Item>{
 
         public boolean hasNext()
         {
-            return index == n;
+            return index != n;
         }
 
         public Item next()
