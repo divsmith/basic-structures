@@ -56,18 +56,18 @@ public class StackArray<Item> implements StackInterface<Item>, Iterable<Item>{
 
     private class ArrayIterator implements Iterator<Item>
     {
-        private int index = 0;
+        private int index = n;
 
         public boolean hasNext()
         {
-            return index != n;
+            return index > 0;
         }
         public void remove() { /* not supported */ }
 
         public Item next()
         {
+            index--;
             Item item = s[index];
-            index++;
             return item;
         }
     }
