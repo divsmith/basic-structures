@@ -1,7 +1,9 @@
+import java.util.Iterator;
+
 /**
  * Created by parker on 4/1/18.
  */
-public class QueueArray<Item> implements QueueInterface<Item>{
+public class QueueArray<Item> implements QueueInterface<Item>, Iterable<Item>{
 
     private int head = 0;
     private int tail = 0;
@@ -64,5 +66,28 @@ public class QueueArray<Item> implements QueueInterface<Item>{
         head = 0;
     }
 
+    public Iterator<Item> iterator()
+    {
+        return  new ArrayIterator();
+    }
+
+    private class ArrayIterator implements Iterator<Item>
+    {
+        int index = head;
+
+        public boolean hasNext()
+        {
+            return index < tail;
+        }
+
+        public void remove() { /* Not supported */ }
+
+        public Item next()
+        {
+            Item item = s[index];
+            index++;
+            return item;
+        }
+    }
 
 }
